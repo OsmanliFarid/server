@@ -7,7 +7,7 @@ export const AllProducts = (req, res) => {
   });
 };
 export const ProductsPost = (req, res) => {
-  const user = [
+  const product = [
     {
       image: "/images/images1.png",
       title: "Syltherine",
