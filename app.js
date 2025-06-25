@@ -2,11 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import {
-  AllProducts,
-  AllProductsId,
-  ProductsPost,
-} from "./Controller/Product/Producs.js";
+
+import productsRoute from "./Routes/productsRoute.js";
 
 const app = express();
 const port = 3030;
@@ -26,6 +23,5 @@ app.listen(port, () => {
       console.error("MongoDB əlaqə xətası:", err);
     });
 });
-app.get("/products", AllProducts);
-app.post("/products", ProductsPost);
-app.get("/products/:id", AllProductsId);
+
+app.use("/products", productsRoute);
